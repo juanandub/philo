@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_current_time.c                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juanandub <juanandub@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 18:47:14 by juanandub         #+#    #+#             */
-/*   Updated: 2025/08/06 16:55:16 by juanandub        ###   ########.fr       */
+/*   Created: 2025/08/06 16:05:00 by juanandub         #+#    #+#             */
+/*   Updated: 2025/08/06 16:06:51 by juanandub        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-size_t	get_current_time(void)
+int	ft_strlen(const char *str)
 {
-	struct timeval	current_time;
+	int	i;
 
-	if (gettimeofday(&current_time, NULL) == -1)
-		printf("ERROR: Failed to get current time\n");
-	return ((current_time.tv_sec * 1000) + (current_time.tv_usec / 1000));
+	if (!str)
+		return (0);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

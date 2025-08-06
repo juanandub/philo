@@ -6,7 +6,7 @@
 /*   By: juanandub <juanandub@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:22:26 by juanandub         #+#    #+#             */
-/*   Updated: 2025/08/06 11:52:03 by juanandub        ###   ########.fr       */
+/*   Updated: 2025/08/06 16:55:09 by juanandub        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,13 @@ void	init_philos(t_philo *philos, t_program *program,
 			pthread_mutex_t *forks, char *argv[]);
 void	init_input(t_philo *philo, char *argv[]);
 
-// Utility func and files
+// ft_get_current_time.c
 size_t	get_current_time(void);
+
+// ft_strlen.c
+int		ft_strlen(const char *str);
+
+// ft_atoi.c
 int		ft_atoi(const char *nptr);
 
 //check_args.c
@@ -80,7 +85,15 @@ void	think(t_philo *philo);
 void	dream(t_philo *philo);
 void	eat(t_philo *philo);
 
+// utils.c
+int		ft_usleep(size_t milsec);
 void	destroy_all(char *str, t_program *program, pthread_mutex_t *forks);
+void	print_message(const char *message, t_philo *philo, int id);
+
+// monitor.c
 void	*monitor(void *philos);
+int		check_all_ate(t_philo *philos);
+int		philo_dead(t_philo *philo, size_t time_to_die);
+int		check_dead(t_philo *philos);
 
 #endif //PHILO_H

@@ -6,7 +6,7 @@
 #    By: juanandub <juanandub@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/04 00:00:00 by juanandub         #+#    #+#              #
-#    Updated: 2025/08/06 11:54:20 by juanandub        ###   ########.fr        #
+#    Updated: 2025/08/06 16:55:13 by juanandub        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,10 @@ SRCS = philo.c \
        init.c \
        ft_get_current_time.c \
        threads.c \
-	   actions.c 
+	   actions.c \
+	   utils.c \
+	   ft_strlen.c \
+	   monitor.c 
 
 # Object files
 OBJS = $(SRCS:.c=.o)
