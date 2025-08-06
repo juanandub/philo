@@ -6,7 +6,7 @@
 /*   By: juanandub <juanandub@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:22:26 by juanandub         #+#    #+#             */
-/*   Updated: 2025/08/04 16:11:45 by juanandub        ###   ########.fr       */
+/*   Updated: 2025/08/06 11:52:03 by juanandub        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@
 # define PHILO_H
 
 # include <stdlib.h>
-# include <sys/types.h>
 # include <pthread.h>
 # include <stdio.h>
+# include <unistd.h>
+# include <sys/time.h>
 
 # define MAX_PHILOS 200
 
@@ -54,8 +55,32 @@ typedef struct s_program
 	t_philo			*philos;
 }	t_program;
 
-int	ft_atoi(const char *nptr);
-int	check_args(int argc, char *argv[]);
-int	is_number(char str[]);
+// Init functions
+void	init_program(t_program *program, t_philo *philos);
+void	init_forks(pthread_mutex_t *forks, int num_philos);
+void	init_philos(t_philo *philos, t_program *program,
+			pthread_mutex_t *forks, char *argv[]);
+void	init_input(t_philo *philo, char *argv[]);
+
+// Utility func and files
+size_t	get_current_time(void);
+int		ft_atoi(const char *nptr);
+
+//check_args.c
+int		check_args(int argc, char *argv[]);
+int		is_number(char str[]);
+
+// threads.c
+int		thread_create(t_program *program, pthread_mutex_t *forks);
+void	*philo_routine(void *philo_ptr);
+int		dead_loop(t_philo *philo);
+
+// actions.c
+void	think(t_philo *philo);
+void	dream(t_philo *philo);
+void	eat(t_philo *philo);
+
+void	destroy_all(char *str, t_program *program, pthread_mutex_t *forks);
+void	*monitor(void *philos);
 
 #endif //PHILO_H

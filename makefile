@@ -6,7 +6,7 @@
 #    By: juanandub <juanandub@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/04 00:00:00 by juanandub         #+#    #+#              #
-#    Updated: 2025/08/04 16:11:49 by juanandub        ###   ########.fr        #
+#    Updated: 2025/08/06 11:54:20 by juanandub        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,12 @@ DEBUG_FLAGS = -g -fsanitize=thread
 
 # Source files
 SRCS = philo.c \
-       check_args.c \
-       ft_atoi.c
+       ft_atoi.c \
+       check_args.c  \
+       init.c \
+       ft_get_current_time.c \
+       threads.c \
+	   actions.c 
 
 # Object files
 OBJS = $(SRCS:.c=.o)

@@ -6,14 +6,14 @@
 /*   By: juanandub <juanandub@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:23:13 by juanandub         #+#    #+#             */
-/*   Updated: 2025/08/05 19:03:18 by juanandub        ###   ########.fr       */
+/*   Updated: 2025/08/06 11:55:03 by juanandub        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //
 // Created by juanandub on 31/7/25.
 //
-#include <stdio.h>
+#include "philo.h"
 
 int	is_number(char str[])
 {
